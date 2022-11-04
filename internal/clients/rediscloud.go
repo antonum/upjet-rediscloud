@@ -26,8 +26,8 @@ const (
 	errExtractCredentials   = "cannot extract credentials"
 	errUnmarshalCredentials = "cannot unmarshal rediscloud credentials as JSON"
 	//https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs#argument-reference
-	url = "url"
-	apiKey = "api_key"
+	url       = "url"
+	apiKey    = "api_key"
 	secretKey = "secret_key"
 )
 
@@ -75,8 +75,8 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 		if v, ok := creds[apiKey]; ok {
 			ps.Configuration[apiKey] = v
 		}
-		if v, ok := creds[apiSecret]; ok {
-			ps.Configuration[apiSecret] = v
+		if v, ok := creds[secretKey]; ok {
+			ps.Configuration[secretKey] = v
 		}
 		return ps, nil
 	}
