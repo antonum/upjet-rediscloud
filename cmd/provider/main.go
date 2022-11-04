@@ -24,12 +24,12 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	"github.com/redislabs/provider-rediscloud/apis"
-	"github.com/redislabs/provider-rediscloud/apis/v1alpha1"
-	"github.com/redislabs/provider-rediscloud/config"
-	"github.com/redislabs/provider-rediscloud/internal/clients"
-	"github.com/redislabs/provider-rediscloud/internal/controller"
-	"github.com/redislabs/provider-rediscloud/internal/features"
+	"github.com/antonum/upjet-rediscloud/apis"
+	"github.com/antonum/upjet-rediscloud/apis/v1alpha1"
+	"github.com/antonum/upjet-rediscloud/config"
+	"github.com/antonum/upjet-rediscloud/internal/clients"
+	"github.com/antonum/upjet-rediscloud/internal/controller"
+	"github.com/antonum/upjet-rediscloud/internal/features"
 )
 
 func main() {

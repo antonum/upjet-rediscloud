@@ -15,7 +15,7 @@ import (
 
 	"github.com/upbound/upjet/pkg/terraform"
 
-	"github.com/redislabs/provider-rediscloud/apis/v1beta1"
+	"github.com/antonum/upjet-rediscloud/apis/v1beta1"
 )
 
 const (

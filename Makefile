@@ -1,8 +1,8 @@
 # ====================================================================================
 # Setup Project
 
-PROJECT_NAME := provider-rediscloud
-PROJECT_REPO := github.com/redislabs/$(PROJECT_NAME)
+PROJECT_NAME := upjet-rediscloud
+PROJECT_REPO := github.com/antonum/$(PROJECT_NAME)
 
 export TERRAFORM_VERSION := 1.3.3
 

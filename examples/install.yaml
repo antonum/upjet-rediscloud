@@ -3,4 +3,4 @@ kind: Provider
 metadata:
   name: provider-rediscloud
 spec:
-  package: redislabs/provider-rediscloud:v0.1.0
+  package: antonum/upjet-rediscloud:v0.1.0

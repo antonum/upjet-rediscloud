@@ -11,7 +11,7 @@ import (
 
 	"github.com/upbound/upjet/pkg/pipeline"
 
-	"github.com/redislabs/provider-rediscloud/config"
+	"github.com/antonum/upjet-rediscloud/config"
 )
 
 func main() {

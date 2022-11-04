@@ -10,14 +10,14 @@ import (
 
 	ujconfig "github.com/upbound/upjet/pkg/config"
 
-	"https://github.com/antonum/upjet-rediscloud/config/account"
-	"https://github.com/antonum/upjet-rediscloud/config/subscription"
-	"https://github.com/antonum/upjet-rediscloud/config/database"
+	"github.com/antonum/upjet-rediscloud/config/account"
+	"github.com/antonum/upjet-rediscloud/config/subscription"
+	"github.com/antonum/upjet-rediscloud/config/database"
 )
 
 const (
 	resourcePrefix = "rediscloud"
-	modulePath     = "github.com/redislabs/provider-rediscloud"
+	modulePath     = "github.com/antonum/upjet-rediscloud"
 )
 
 //go:embed schema.json
