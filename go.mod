@@ -1,4 +1,4 @@
-module github.com/upbound/upjet-provider-template
+module github.com/redislabs/provider-rediscloud
 
 go 1.19
 

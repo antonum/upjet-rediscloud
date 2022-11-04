@@ -15,7 +15,7 @@ import (
 
 	"github.com/upbound/upjet/pkg/terraform"
 
-	"github.com/upbound/upjet-provider-template/apis/v1beta1"
+	"github.com/redislabs/provider-rediscloud/apis/v1beta1"
 )
 
 const (
@@ -24,7 +24,11 @@ const (
 	errGetProviderConfig    = "cannot get referenced ProviderConfig"
 	errTrackUsage           = "cannot track ProviderConfig usage"
 	errExtractCredentials   = "cannot extract credentials"
-	errUnmarshalCredentials = "cannot unmarshal template credentials as JSON"
+	errUnmarshalCredentials = "cannot unmarshal rediscloud credentials as JSON"
+	//https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs#argument-reference
+	url = "url"
+	apiKey = "api_key"
+	secretKey = "secret_key"
 )
 
 // TerraformSetupBuilder builds Terraform a terraform.SetupFn function which
@@ -63,10 +67,17 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 		}
 
 		// Set credentials in Terraform provider configuration.
-		/*ps.Configuration = map[string]any{
-			"username": creds["username"],
-			"password": creds["password"],
-		}*/
+		// set provider configuration
+		ps.Configuration = map[string]any{}
+		if v, ok := creds[url]; ok {
+			ps.Configuration[url] = v
+		}
+		if v, ok := creds[apiKey]; ok {
+			ps.Configuration[apiKey] = v
+		}
+		if v, ok := creds[apiSecret]; ok {
+			ps.Configuration[apiSecret] = v
+		}
 		return ps, nil
 	}
 }

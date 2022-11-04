@@ -10,12 +10,14 @@ import (
 
 	ujconfig "github.com/upbound/upjet/pkg/config"
 
-	"github.com/upbound/upjet-provider-template/config/null"
+	"https://github.com/antonum/upjet-rediscloud/config/account"
+	"https://github.com/antonum/upjet-rediscloud/config/subscription"
+	"https://github.com/antonum/upjet-rediscloud/config/database"
 )
 
 const (
-	resourcePrefix = "template"
-	modulePath     = "github.com/upbound/upjet-provider-template"
+	resourcePrefix = "rediscloud"
+	modulePath     = "github.com/redislabs/provider-rediscloud"
 )
 
 //go:embed schema.json
@@ -34,7 +36,9 @@ func GetProvider() *ujconfig.Provider {
 
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
-		null.Configure,
+		account.Configure,
+		database.Configure,
+		subscription.Configure,
 	} {
 		configure(pc)
 	}

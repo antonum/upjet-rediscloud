@@ -10,7 +10,10 @@ import "github.com/upbound/upjet/pkg/config"
 // provider.
 var ExternalNameConfigs = map[string]config.ExternalName{
 	// Import requires using a randomly generated ID from provider: nl-2e21sda
-	"null_resource": config.IdentifierFromProvider,
+	"rediscloud_subscription_database": config.IdentifierFromProvider,
+	"rediscloud_subscription": config.IdentifierFromProvider,
+	"rediscloud_cloud_account": config.IdentifierFromProvider,
+
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the
