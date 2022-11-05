@@ -1,0 +1,18 @@
+apiVersion: database.rediscloud.upbound.io/v1alpha1
+kind: Database
+metadata:
+  name: first-cp-database
+spec:
+  forProvider:
+    subscriptionId: 1889645
+    name: "first-cp-database"
+    protocol: "redis"
+    memoryLimitInGb: 1
+    dataPersistence: "none"
+    throughputMeasurementBy: "operations-per-second"
+    throughputMeasurementValue: 1000
+    #template:
+    #  - owner: antonum
+    #    repository: upjet-rediscloud
+  providerConfigRef:
+    name: default
