@@ -11,8 +11,8 @@ import (
 	ujconfig "github.com/upbound/upjet/pkg/config"
 
 	"github.com/antonum/upjet-rediscloud/config/account"
-	"github.com/antonum/upjet-rediscloud/config/subscription"
 	"github.com/antonum/upjet-rediscloud/config/database"
+	"github.com/antonum/upjet-rediscloud/config/subscription"
 )
 
 const (
