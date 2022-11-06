@@ -1,15 +1,18 @@
 apiVersion: database.rediscloud.upbound.io/v1alpha1
 kind: Database
 metadata:
-  name: "crossplane-database"
+  name: crossplane-database-modules
 spec:
   forProvider:
     subscriptionId: 1890183
-    name: "crossplane-database"
+    name: "crossplane-database-modules"
     protocol: "redis"
     memoryLimitInGb: 1
     dataPersistence: "none"
-    throughputMeasurementBy: "operations-per-second"
-    throughputMeasurementValue: 1000
+    throughputMeasurementBy: "number-of-shards"
+    throughputMeasurementValue: 1
+    modules:
+      - name: RedisJSON
+      - name: RediSearch
   providerConfigRef:
     name: default
