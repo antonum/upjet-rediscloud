@@ -65,7 +65,7 @@ IMAGES = $(PROJECT_NAME)
 
 XPKG_REG_ORGS ?= xpkg.upbound.io/antonum
 # NOTE(hasheddan): skip promoting on xpkg.upbound.io as channel tags are
-# inferred.
+# inferred. 
 XPKG_REG_ORGS_NO_PROMOTE ?= xpkg.upbound.io/antonum
 XPKGS = $(PROJECT_NAME)
 -include build/makelib/xpkg.mk
