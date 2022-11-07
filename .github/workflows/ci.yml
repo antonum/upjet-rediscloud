@@ -191,7 +191,7 @@ jobs:
         uses: docker/login-action@v1
         if: env.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR != ''
         with:
-          registry: xpkg.upbound.io
+          registry: xpkg.upbound.io/antonum
           username: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR }}
           password: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_PSW }}
 
