@@ -196,7 +196,7 @@ jobs:
           password: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_PSW }}
 
       - name: up login with token
-        run: up login -t ${{ secrets.UPBOUND_MARKETPLACE_TOKEN }}
+        run: up login -u ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR }} -p ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_PSW }}
 
       - name: Checkout
         uses: actions/checkout@v2
