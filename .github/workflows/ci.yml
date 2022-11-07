@@ -242,5 +242,8 @@ jobs:
           name: output
           path: _output/**
 
+      - name: UP CLI login
+        run: up login -t ${{ secrets.UPBOUND_MARKETPLACE_TOKEN }}      
+
       - name: Publish Artifacts
         run: make publish BRANCH_NAME=${GITHUB_REF##*/}
