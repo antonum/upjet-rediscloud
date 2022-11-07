@@ -197,7 +197,10 @@ jobs:
       #    password: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_PSW }}
 
       - name: Install UP CLI login
-        run: curl -sL "https://cli.upbound.io" | sh      
+        run: |
+          curl -sL "https://cli.upbound.io" | sh
+          mv up /usr/local/bin/
+          up --version      
 
       - name: UP CLI login
         if: env.UPBOUND_MARKETPLACE_TOKEN != ''
