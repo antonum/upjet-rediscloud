@@ -13,3 +13,6 @@ spec:
     throughputMeasurementValue: 1000
   providerConfigRef:
     name: default
+  writeConnectionSecretToRef:
+    name: crossplane-database-password
+    namespace: default
