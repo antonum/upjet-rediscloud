@@ -23,6 +23,7 @@ import (
 	"k8s.io/client-go/tools/leaderelection/resourcelock"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
+	_ "k8s.io/client-go/plugin/pkg/client/auth"
 
 	"github.com/antonum/upjet-rediscloud/apis"
 	"github.com/antonum/upjet-rediscloud/apis/v1alpha1"
