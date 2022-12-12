@@ -20,10 +20,10 @@ import (
 	"gopkg.in/alecthomas/kingpin.v2"
 	kerrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	_ "k8s.io/client-go/plugin/pkg/client/auth"
 	"k8s.io/client-go/tools/leaderelection/resourcelock"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
-	_ "k8s.io/client-go/plugin/pkg/client/auth"
 
 	"github.com/antonum/upjet-rediscloud/apis"
 	"github.com/antonum/upjet-rediscloud/apis/v1alpha1"
