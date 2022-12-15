@@ -1,4 +1,8 @@
-apiVersion: meta.pkg.crossplane.io/v1alpha1
+apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
   name: provider-rediscloud
+spec:
+  package: xpkg.upbound.io/antonum/upjet-rediscloud
+  packagePullSecrets:
+    - name: package-pull-secret
