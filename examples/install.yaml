@@ -3,4 +3,6 @@ kind: Provider
 metadata:
   name: provider-rediscloud
 spec:
-  package: antonum/upjet-rediscloud:v0.1.0
+  package: xpkg.upbound.io/antonum/upjet-rediscloud
+  packagePullSecrets:
+    - name: package-pull-secret
