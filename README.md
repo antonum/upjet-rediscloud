@@ -5,7 +5,57 @@ is built using [Upjet](https://github.com/upbound/upjet) code
 generation tools and exposes XRM-conformant managed resources for the
 RedisCloud API.
 
-## Getting Started
+## QuickStart (user mode)
+
+Install [UP CLI](https://docs.upbound.io/cli/) 
+```
+brew install upbound/tap/up
+```
+or see link above for instructions on other platforms.
+
+Install latest Crossplane to your current kubernetes cluster:
+```
+up uxp install
+```
+That would create `upbound-system` namespace and install core crossplane components.
+
+Install Rediscloud provider:
+```
+kubectl apply -n upbound-system -f examples/install-open.yaml 
+```
+Note: in pre-released stage `install-open.yaml` uses public, but potentially outdataed version of provider image. To access the latest you need to use examples/install.yaml that requires credentials to the private repo. 
+
+Create `secret.yaml` from `examples/providerconfig/secret.yaml.tmpl` using your Redis Cloud key/secret. Install  secret and provider config.
+```
+kubectl apply -f examples/providerconfig/secret.yaml                    
+kubectl apply -n upbound-system -f examples/providerconfig/providerconfig.yaml 
+```
+
+Use `examples/database.yaml` as example to create the database. It must use pre-existing subscription id.
+
+```
+kubectl apply -f - << EOF  
+apiVersion: database.rediscloud.upbound.io/v1alpha1
+kind: Database
+metadata:
+  name: my-first-database
+spec:
+  forProvider:
+    subscriptionId: 1922316
+    name: "my-first-database"
+    protocol: "redis"
+    memoryLimitInGb: 1
+    dataPersistence: "none"
+    throughputMeasurementBy: "operations-per-second"
+    throughputMeasurementValue: 1000
+  providerConfigRef:
+    name: default
+EOF
+```
+
+
+
+## Getting Started (Development out-of-cluster mode)
 
 Build the provider:
 ```
