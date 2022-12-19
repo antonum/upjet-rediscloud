@@ -1,0 +1,29 @@
+apiVersion: subscription.rediscloud.upbound.io/v1alpha1
+kind: Subscription
+metadata:
+  name: crossplane-subscription
+spec:
+  forProvider:
+    name: "anton-crossplane-generated"
+    memoryStorage: "ram"
+    paymentMethod: "credit-card"
+    paymentMethodId: "9605"
+    cloudProvider:
+      - region:
+          - networkingDeploymentCidr: "10.0.0.0/24"
+            preferredAvailabilityZones:
+              - "us-central1-a"
+            region: us-central1
+        provider: "GCP"
+        cloudAccountId: "1"
+    creationPlan:
+      - memoryLimitInGb: 1
+        modules:
+          - "RedisJSON"
+        quantity: 1
+        replication: true
+        supportOssClusterApi: false
+        throughputMeasurementBy: operations-per-second
+        throughputMeasurementValue: 1000
+  providerConfigRef:
+    name: default
