@@ -7,6 +7,6 @@ func Configure(p *config.Provider) {
 	p.AddResourceConfigurator("rediscloud_subscription_peering", func(r *config.Resource) {
 		// We need to override the default group that upjet generated for
 		// this resource, which would be "github"
-		r.ShortGroup = "database"
+		r.ShortGroup = "peering"
 	})
 }
