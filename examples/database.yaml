@@ -11,6 +11,8 @@ spec:
     dataPersistence: "none"
     throughputMeasurementBy: "operations-per-second"
     throughputMeasurementValue: 1000
+    replication: false
+    dataEviction: "volatile-lru"
   providerConfigRef:
     name: default
   writeConnectionSecretToRef:

@@ -4,11 +4,17 @@ metadata:
   name: crossplane-database-modules
 spec:
   forProvider:
-    subscriptionId: 1890183
+    subscriptionId: 1926758
     name: "crossplane-database-modules"
     protocol: "redis"
     memoryLimitInGb: 1
-    dataPersistence: "none"
+    # options for dataPersistence
+    # none, aof-every-1-second, aof-every-write, snapshot-every-1-hour, snapshot-every-6-hours, snapshot-every-12-hours
+    dataPersistence: "aof-every-1-second"
+    replication: true
+    # options for dataEviction
+    # allkeys-lru, allkeys-lfu, allkeys-random, volatile-lru, volatile-lfu, volatile-random, volatile-ttl, noeviction
+    dataEviction: "noeviction"
     throughputMeasurementBy: "number-of-shards"
     throughputMeasurementValue: 1
     modules:
@@ -16,3 +22,6 @@ spec:
       - name: RediSearch
   providerConfigRef:
     name: default
+  writeConnectionSecretToRef:
+    name: crossplane-database-modules-password
+    namespace: default
