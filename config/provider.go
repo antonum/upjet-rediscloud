@@ -13,6 +13,7 @@ import (
 	"github.com/antonum/upjet-rediscloud/config/account"
 	"github.com/antonum/upjet-rediscloud/config/database"
 	"github.com/antonum/upjet-rediscloud/config/subscription"
+	"github.com/antonum/upjet-rediscloud/config/peering"
 )
 
 const (
@@ -39,6 +40,7 @@ func GetProvider() *ujconfig.Provider {
 		account.Configure,
 		database.Configure,
 		subscription.Configure,
+		peering.Configure,
 	} {
 		configure(pc)
 	}
