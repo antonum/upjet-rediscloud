@@ -12,6 +12,7 @@ import (
 
 	v1alpha1 "github.com/antonum/upjet-rediscloud/apis/account/v1alpha1"
 	v1alpha1database "github.com/antonum/upjet-rediscloud/apis/database/v1alpha1"
+	v1alpha1peering "github.com/antonum/upjet-rediscloud/apis/peering/v1alpha1"
 	v1alpha1subscription "github.com/antonum/upjet-rediscloud/apis/subscription/v1alpha1"
 	v1alpha1apis "github.com/antonum/upjet-rediscloud/apis/v1alpha1"
 	v1beta1 "github.com/antonum/upjet-rediscloud/apis/v1beta1"
@@ -22,6 +23,7 @@ func init() {
 	AddToSchemes = append(AddToSchemes,
 		v1alpha1.SchemeBuilder.AddToScheme,
 		v1alpha1database.SchemeBuilder.AddToScheme,
+		v1alpha1peering.SchemeBuilder.AddToScheme,
 		v1alpha1subscription.SchemeBuilder.AddToScheme,
 		v1alpha1apis.SchemeBuilder.AddToScheme,
 		v1beta1.SchemeBuilder.AddToScheme,

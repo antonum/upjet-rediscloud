@@ -12,8 +12,8 @@ import (
 
 	"github.com/antonum/upjet-rediscloud/config/account"
 	"github.com/antonum/upjet-rediscloud/config/database"
-	"github.com/antonum/upjet-rediscloud/config/subscription"
 	"github.com/antonum/upjet-rediscloud/config/peering"
+	"github.com/antonum/upjet-rediscloud/config/subscription"
 )
 
 const (

@@ -13,7 +13,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	"rediscloud_subscription_database": config.IdentifierFromProvider,
 	"rediscloud_subscription":          config.IdentifierFromProvider,
 	"rediscloud_cloud_account":         config.IdentifierFromProvider,
-	"rediscloud_subscription_peering":         config.IdentifierFromProvider,
+	"rediscloud_subscription_peering":  config.IdentifierFromProvider,
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the

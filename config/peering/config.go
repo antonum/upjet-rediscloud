@@ -1,4 +1,4 @@
-package database
+package peering
 
 import "github.com/upbound/upjet/pkg/config"
 

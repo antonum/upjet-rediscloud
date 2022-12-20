@@ -11,6 +11,7 @@ import (
 
 	account "github.com/antonum/upjet-rediscloud/internal/controller/account/account"
 	database "github.com/antonum/upjet-rediscloud/internal/controller/database/database"
+	peering "github.com/antonum/upjet-rediscloud/internal/controller/peering/peering"
 	providerconfig "github.com/antonum/upjet-rediscloud/internal/controller/providerconfig"
 	subscription "github.com/antonum/upjet-rediscloud/internal/controller/subscription/subscription"
 )
@@ -21,6 +22,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		account.Setup,
 		database.Setup,
+		peering.Setup,
 		providerconfig.Setup,
 		subscription.Setup,
 	} {
